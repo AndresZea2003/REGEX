@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DateController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/welcome', 'welcome')->name('welcome');
+
+Route::post('/dates', [DateController::class, 'dates'])->name('dates.validate');
